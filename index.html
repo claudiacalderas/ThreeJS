@@ -8,7 +8,7 @@
         body {
             margin: 0;
         }
-        
+
         canvas {
             width: 100%;
             height: 100%
@@ -27,19 +27,19 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.body.appendChild(renderer.domElement);
 
-        var geometry = new THREE.BoxGeometry(1, 1, 1);
+        var geometry = new THREE.BoxGeometry(2, 1, 2);
         var material = new THREE.MeshBasicMaterial({
-            color: 0x00ff00
+            color: 0x00fff0
         });
         var cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
-        camera.position.z = 5;
+        camera.position.z = 7;
 
         function animate() {
             requestAnimationFrame(animate);
-            cube.rotation.x += 0.1;
-            cube.rotation.y += 0.1;
+            cube.rotation.x += 0.03; // by changing this value, rotation speed changes
+            cube.rotation.y += 0.05;
             renderer.render(scene, camera);
         }
 
